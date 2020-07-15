@@ -4,7 +4,7 @@
 
 def hasconsecutivedigits(n):
     # your code goes here
-    previousDigit = -1
+    previousDigit = -2
     n = abs(n)
     while n > 0:
         if n % 10 == previousDigit:
