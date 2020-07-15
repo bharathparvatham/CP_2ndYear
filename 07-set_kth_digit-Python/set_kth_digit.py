@@ -6,4 +6,10 @@
 
 
 def fun_set_kth_digit(n, k, d):
-    return ((n // (10 ** (k + 1))) * (10 ** (k + 1))) + (k * (10 ** k)) + (n % (10 ** k))
+    multiplicationFactor = 1
+    n = abs(n)
+
+    if n < 0:
+        multiplicationFactor = -1
+
+    return multiplicationFactor * ((n // (10 ** (k + 1))) * (10 ** (k + 1))) + (k * (10 ** k)) + (n % (10 ** k))
