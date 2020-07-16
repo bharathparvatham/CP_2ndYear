@@ -10,7 +10,7 @@
 # assert(nthHappyNumber(6) == 28)
 # assert(nthHappyNumber(7) == 31)
 
-def happyNumber(number):
+def happyNumber(n):
     while (n > 9):
         sumOfSquaresOfDigits = 0
         while (n > 0):
