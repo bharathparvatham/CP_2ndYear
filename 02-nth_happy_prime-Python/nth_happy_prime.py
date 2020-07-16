@@ -38,7 +38,7 @@ def happyNumber(n):
 def fun_nth_happy_prime(n):
     if n == 0:
         return 7
-    start = 7
+    start = 8
     end = n + 10
     primeNumberList = primeInRange(start, end)
 
