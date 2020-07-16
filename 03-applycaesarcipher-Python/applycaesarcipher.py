@@ -20,9 +20,9 @@ def fun_applycaesarcipher(msg, shift):
         if 97 <= ord(ch) <= 122:
             if ord(ch) + shift > 122:
                 if capital:
-                    result += (chr(ord(ch) + shift - 122)).upper()
+                    result += (chr(96 + ord(ch) + shift - 122)).upper()
                 else:
-                    result += chr(ord(ch) + shift - 122)
+                    result += chr(96 + ord(ch) + shift - 122)
             elif ord(ch) + shift < 97:
                 if capital:
                     result += (chr(123 - (97 - (ord(ch) + shift)))).upper()
