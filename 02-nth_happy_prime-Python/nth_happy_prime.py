@@ -49,7 +49,7 @@ def fun_nth_happy_prime(n):
             if happyNumber(prime):
                 happyNumbers.append(prime)
         if n > len(happyNumbers) - 1:
-            start = end
+            start = end + 1
             end = start + 10
             primeNumberList = primeInRange(start, end)
     return happyNumbers[n]
