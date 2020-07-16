@@ -32,3 +32,13 @@ def fun_nth_happy_number(n):
             number += 1
 
     return happyNumberList[n]
+
+
+print(fun_nth_happy_number(0))
+print(fun_nth_happy_number(1))
+print(fun_nth_happy_number(2))
+print(fun_nth_happy_number(3))
+print(fun_nth_happy_number(4))
+print(fun_nth_happy_number(5))
+print(fun_nth_happy_number(6))
+print(fun_nth_happy_number(7))
