@@ -1,6 +1,6 @@
-# Write the function fun_isfactorish(n) that takes a value int n, 
-# and returns True if n is a (possibly-negative) integer with exactly 3 unique digits 
-# (so no two digits are the same), where each of the digits is a factor of the number 
+# Write the function fun_isfactorish(n) that takes a value int n,
+# and returns True if n is a (possibly-negative) integer with exactly 3 unique digits
+# (so no two digits are the same), where each of the digits is a factor of the number
 # n itself. In all other cases, the function returns False (without crashing).
 # For example:
 #  assert(fun_isfactorish(412) == True) # 4, 1, and 2 are all factors of 412
@@ -12,5 +12,19 @@
 
 
 def fun_isfactorish(n):
-	return False
+    if n // 1000 != 0 or n // 100 == 0:
+        return False
+    number = n
+    unitsDigit = n % 10
+    n = n // 10
+    tensDigit = n % 10
+    n = n // 10
+    hundredsDigit = n
 
+    if unitsDigit == 0 or tensDigit == 0 or hundredsDigit == 0:
+        return False
+
+    if unitsDigit != tensDigit != hundredsDigit:
+        if (n % unitsDigit) == (n % tensDigit) == (n % hundredsDigit) == 0:
+            return True
+    return False
