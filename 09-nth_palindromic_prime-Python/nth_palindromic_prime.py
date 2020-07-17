@@ -43,7 +43,7 @@ def fun_nth_palindromic_prime(n):
                     palindromicPrimes.append(prime)
                     if n == len(palindromicPrimes) - 1:
                         break
-                        start += 101
+            start += 101
         return palindromicPrimes[n]
 
 
