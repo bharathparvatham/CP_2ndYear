@@ -46,4 +46,13 @@ def fun_nth_palindromic_prime(n):
         return palindromicPrimes[n]
 
 
+print(fun_nth_palindromic_prime(4))
+print(fun_nth_palindromic_prime(5))
+print(fun_nth_palindromic_prime(6))
+print(fun_nth_palindromic_prime(7))
+print(fun_nth_palindromic_prime(8))
+print(fun_nth_palindromic_prime(9))
 print(fun_nth_palindromic_prime(10))
+# print(fun_nth_palindromic_prime(10))
+# print(fun_nth_palindromic_prime(10))
+# print(fun_nth_palindromic_prime(10))
