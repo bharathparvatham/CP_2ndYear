@@ -25,6 +25,6 @@ def fun_isfactorish(n):
         return False
 
     if unitsDigit != tensDigit != hundredsDigit:
-        if (n % unitsDigit) == (n % tensDigit) == (n % hundredsDigit) == 0:
+        if (number % unitsDigit) == (number % tensDigit) == (number % hundredsDigit) == 0:
             return True
-    return False
+    return Falsex
