@@ -13,16 +13,13 @@ def findzerowithbisection(x, epsilon):
     start = 1
     end = x
     mid = (start + end) / 2
-    while(abs(start - end) > epsilon):
-        mid = (start + end) / 2
-        if (x - (start ** 2)) == 0:
-            return start
-        elif (x - (mid ** 2)) == 0:
-            return mid
-        elif (x - (end ** 2)) == 0:
-            return end
-        elif ((x - (start ** 2)) < 0 and (x - (mid ** 2)) > 0) or ((x - (start ** 2)) > 0 and (x - (mid ** 2)) < 0):
+    while(abs((mid ** 2) - x) > epsilon):
+        if(mid ** 2) > x:
             end = mid
-        else:
+        elif(mid ** 2) < x:
             start = mid
+        else:
+            return mid
+        mid = (start + end) / 2
+
     return mid
