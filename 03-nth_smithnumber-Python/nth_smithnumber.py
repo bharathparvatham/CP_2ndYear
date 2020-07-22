@@ -66,3 +66,6 @@ def fun_nth_smithnumber(n):
 print(fun_nth_smithnumber(0))
 print(fun_nth_smithnumber(1))
 print(fun_nth_smithnumber(2))
+print(fun_nth_smithnumber(5))
+print(fun_nth_smithnumber(10))
+print(fun_nth_smithnumber(15))
