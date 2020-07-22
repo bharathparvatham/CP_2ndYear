@@ -175,9 +175,27 @@ class Graph(object):
         ARGUMENTS: start_node_num is the node number (integer)
         MODIFIES: the value of the visited property of nodes in self.nodes
         RETURN: a list of the node values (integers)."""
-        pass
+        self._clear_visited()
+        start_node = self.find_node(start_node_num)
+        queue = []
+        List = []
+
+        if start_node:
+            queue.append(start_node)
+
+        while queue:
+            start_node = queue.pop(0)
+            if start_node.visited == False:
+                start_node.visited = True
+                List.append(start_node.value)
+
+            for vertex in start_node.edges:
+                if vertex.node_to.visited == False:
+                    queue.append(vertex.node_to)
+
+        return List
 
     def bfs_names(self, start_node_num):
         """Return the results of bfs with numbers converted to names."""
-        # del ret_list[0: len(ret_list)]
+        # del ret_list[0: len(ret_list)
         return [self.node_names[num] for num in self.bfs(start_node_num)]
