@@ -6,6 +6,7 @@
 # as does longestDigitRun(-677886).
 def longestdigitrun(n):
     # Your code goes here
+    n = abs(n)
     prevDigit = n % 10
     n = n // 10
     count = 1
