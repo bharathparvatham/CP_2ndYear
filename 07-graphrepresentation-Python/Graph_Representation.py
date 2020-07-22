@@ -53,7 +53,8 @@ class Graph(object):
                 adjacency_list[edge.node_from.value] = [
                     (edge.node_to.value, edge.value)]
             else:
-                adjacency_list.append((edge.node_to.value, edge.value))
+                adjacency_list[edge.node_from.value].append(
+                    (edge.node_to.value, edge.value))
         return adjacency_list
 
     def get_adjacency_matrix(self):
