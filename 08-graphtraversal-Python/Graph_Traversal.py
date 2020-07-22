@@ -4,6 +4,7 @@ class Node(object):
         self.edges = []
         self.visited = False
 
+
 class Edge(object):
     def __init__(self, value, node_from, node_to):
         self.value = value
@@ -16,6 +17,7 @@ class Edge(object):
 # Specifically: Graph.set_node_names
 # and the methods ending in "_names" which will print names instead
 # of node numbers
+
 
 class Graph(object):
     def __init__(self, nodes=None, edges=None):
@@ -79,7 +81,7 @@ class Graph(object):
         for edg in self.edges:
             from_value, to_value = edg.node_from.value, edg.node_to.value
             adjacency_list[from_value].append((to_value, edg.value))
-        return [a or None for a in adjacency_list] # replace []'s with None
+        return [a or None for a in adjacency_list]  # replace []'s with None
 
     def get_adjacency_list_names(self):
         """Each section in the list will store a list
@@ -88,9 +90,11 @@ class Graph(object):
         Node names should come from the names set
         with set_node_names."""
         adjacency_list = self.get_adjacency_list()
+
         def convert_to_names(pair, graph=self):
             node_number, value = pair
             return (graph.node_names[node_number], value)
+
         def map_conversion(adjacency_list_for_node):
             if adjacency_list_for_node is None:
                 return None
@@ -126,12 +130,12 @@ class Graph(object):
     def find_node(self, node_number):
         "Return the node with value node_number or None"
         return self._node_map.get(node_number)
-    
+
     def _clear_visited(self):
         for node in self.nodes:
             node.visited = False
 
-    def dfs_helper(self, start_node):
+    def dfs_helper(self, start_node, List):
         """TODO: Write the helper function for a recursive implementation
         of Depth First Search iterating through a node's edges. The
         output should be a list of numbers corresponding to the
@@ -140,7 +144,15 @@ class Graph(object):
         MODIFIES: the value of the visited property of nodes in self.nodes 
         RETURN: a list of the traversed node values (integers).
         """
-        pass
+        if start_node:
+            start_node.visited = True
+            List.append(start_node.value)
+
+        for vertex in start_node.edges:
+            if vertex.node_to.visited == False:
+                dfs_helper(vertex.node_to, List)
+
+        return List
 
     def dfs(self, start_node_num):
         """Outputs a list of numbers corresponding to the traversed nodes
@@ -150,7 +162,7 @@ class Graph(object):
         RETURN: a list of the node values (integers)."""
         self._clear_visited()
         start_node = self.find_node(start_node_num)
-        return self.dfs_helper(start_node)
+        return self.dfs_helper(start_node, [])
 
     def dfs_names(self, start_node_num):
         """Return the results of dfs with numbers converted to names."""
@@ -167,7 +179,5 @@ class Graph(object):
 
     def bfs_names(self, start_node_num):
         """Return the results of bfs with numbers converted to names."""
-        del ret_list[0 : len(ret_list)]
+        del ret_list[0: len(ret_list)]
         return [self.node_names[num] for num in self.bfs(start_node_num)]
-
-
