@@ -61,3 +61,8 @@ def fun_nth_smithnumber(n):
                 smithNumbers.append(start)
             start += 1
     return smithNumbers[n]
+
+
+print(fun_nth_smithnumber(0))
+print(fun_nth_smithnumber(1))
+print(fun_nth_smithnumber(2))
