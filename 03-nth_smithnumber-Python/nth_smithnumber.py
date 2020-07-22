@@ -39,7 +39,7 @@ def isSmithnumber(number, primes):
 
     while number > 1:
         if number % primes[index] == 0:
-            primeFactors.append(primes[index])
+            primeFactors.append(sumOfDigits(primes[index]))
             number = number // primes[index]
         else:
             index += 1
