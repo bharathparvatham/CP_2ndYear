@@ -150,7 +150,7 @@ class Graph(object):
 
         for vertex in start_node.edges:
             if vertex.node_to.visited == False:
-                dfs_helper(vertex.node_to, List)
+                self.dfs_helper(vertex.node_to, List)
 
         return List
 
