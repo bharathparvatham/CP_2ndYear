@@ -48,9 +48,17 @@ class Graph(object):
 
     def get_adjacency_list(self):
         adjacency_list = [None] * (len(self.nodes) + 1)
+        for edge in self.edges:
+            if adjacency_list[edge.node_from.value] is None:
+                adjacency_list[edge.node_from.value] = [
+                    (edge.node_to.value, edge.value)]
+            else:
+                adjacency_list.append((edge.node_to.value, edge.value))
         return adjacency_list
 
     def get_adjacency_matrix(self):
         adjacency_matrix = [
             [0 for i in range(len(self.nodes) + 1)] for j in range(len(self.nodes) + 1)]
+        for edge in self.edges:
+            adjacency_matrix[edge.node_from.value][edge.node_to.value] = edge.value
         return adjacency_matrix
