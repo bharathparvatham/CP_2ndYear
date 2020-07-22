@@ -179,5 +179,5 @@ class Graph(object):
 
     def bfs_names(self, start_node_num):
         """Return the results of bfs with numbers converted to names."""
-        del ret_list[0: len(ret_list)]
+        # del ret_list[0: len(ret_list)]
         return [self.node_names[num] for num in self.bfs(start_node_num)]
