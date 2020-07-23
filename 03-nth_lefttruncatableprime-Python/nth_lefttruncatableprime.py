@@ -41,3 +41,6 @@ def fun_nth_lefttruncatableprime(n):
                 leftTruncatbalePrime = start
         start += 1
     return leftTruncatbalePrime
+
+
+print(fun_nth_lefttruncatableprime(10))
