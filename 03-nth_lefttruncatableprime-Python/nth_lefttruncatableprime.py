@@ -41,14 +41,16 @@ def fun_nth_lefttruncatableprime(n):
                 leftTruncatbalePrime = start
                 start += 1
                 continue
-            digitsCount = sumOfDigits(start)
-            startCount = digitsCount
+            startCount = sumOfDigits(start)
+            digitsCount = startCount
+            prevCount = startCount
             flag = True
             while digitsCount > 1:
-                if startCount - sumOfDigits(start % (10 ** (digitsCount - 1))) < 1:
+                if prevCount - sumOfDigits(start % (10 ** (digitsCount - 1))) != 1:
                     flag = False
                     break
                 elif isPrime(start % (10 ** (digitsCount - 1))):
+                    prevCount -= 1
                     digitsCount -= 1
                 else:
                     flag = False
