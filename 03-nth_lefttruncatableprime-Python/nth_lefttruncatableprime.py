@@ -39,10 +39,21 @@ def fun_nth_lefttruncatableprime(n):
             if start < 9:
                 count += 1
                 leftTruncatbalePrime = start
-            elif sumOfDigits(start) - sumOfDigits(start % (10 ** (sumOfDigits(start) - 1))) != 1:
                 start += 1
                 continue
-            elif isPrime(start % (10 ** (sumOfDigits(start) - 1))):
+            digitsCount = sumOfDigits(start)
+            startCount = digitsCount
+            flag = True
+            while digitsCount > 1:
+                if startCount - sumOfDigits(start % (10 ** (digitsCount - 1))) < 1:
+                    flag = False
+                    break
+                elif isPrime(start % (10 ** (digitsCount - 1))):
+                    digitsCount -= 1
+                else:
+                    flag = False
+                    break
+            if flag:
                 count += 1
                 leftTruncatbalePrime = start
         start += 1
