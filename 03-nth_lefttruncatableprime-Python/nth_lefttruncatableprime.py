@@ -51,5 +51,9 @@ def fun_nth_lefttruncatableprime(n):
 
 print(fun_nth_lefttruncatableprime(10))
 print(fun_nth_lefttruncatableprime(15))
+print(fun_nth_lefttruncatableprime(16))
+print(fun_nth_lefttruncatableprime(17))
+print(fun_nth_lefttruncatableprime(19))
+print(fun_nth_lefttruncatableprime(15))
 print(fun_nth_lefttruncatableprime(20))
 print(fun_nth_lefttruncatableprime(25))
