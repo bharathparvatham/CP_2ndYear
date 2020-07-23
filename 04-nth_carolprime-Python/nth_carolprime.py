@@ -15,7 +15,7 @@ def fun_nth_carolprime(n):
     k = 3
 
     while count < n:
-        if k % 3 == 1:
+        if k % 3 == 2:
             k += 1
         else:
             carolPrime = ((2**k - 1)**2 - 2)
