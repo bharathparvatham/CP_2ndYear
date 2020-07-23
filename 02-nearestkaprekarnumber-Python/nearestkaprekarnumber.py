@@ -16,7 +16,7 @@ def countOfDigits(number):
     if number < 9:
         return 1
     count = 0
-    while(number < 0):
+    while(number > 0):
         count += 1
         number = number // 10
     return count
@@ -50,3 +50,11 @@ def fun_nearestkaprekarnumber(n):
             elif isKaprekarNumber(n + count):
                 return (n + count)
         count += 1
+
+
+print(fun_nearestkaprekarnumber(49))
+print(fun_nearestkaprekarnumber(51))
+print(fun_nearestkaprekarnumber(50))
+print(fun_nearestkaprekarnumber(102))
+print(fun_nearestkaprekarnumber(765))
+print(fun_nearestkaprekarnumber(3861))
