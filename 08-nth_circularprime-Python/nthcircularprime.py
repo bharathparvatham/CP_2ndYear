@@ -39,8 +39,8 @@ def rightRotate(number):
 
     while(rightRotate != number):
         rotatedNumber.append(rightRotate)
-        rightRotate = (rightRotate % 10) * \
-            (10 ** (count - 1)) + (rightRotate // 10)
+        rightRotate = ((rightRotate % 10) * (10 ** (count - 1))
+                       ) + (rightRotate // 10)
 
     return rotatedNumber
 
