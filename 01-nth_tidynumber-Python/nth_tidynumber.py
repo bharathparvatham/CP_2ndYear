@@ -36,3 +36,10 @@ def fun_nth_tidynumber(n):
             start += 1
 
     return tidyNumber
+
+
+print(fun_nth_tidynumber(50))
+print(fun_nth_tidynumber(100))
+print(fun_nth_tidynumber(250))
+print(fun_nth_tidynumber(500))
+# print(fun_nth_tidynumber(50))
