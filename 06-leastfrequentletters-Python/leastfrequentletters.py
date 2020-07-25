@@ -13,8 +13,6 @@ def leastfrequentletters(s):
         return ""
 
     s = s.lower()
-    length = len(s)
-
     result = ""
     count = 1
 
