@@ -17,7 +17,7 @@ def leastfrequentletters(s):
     count = 1
 
     for char in s:
-        if char.isaplha():
+        if char.isalpha():
             if s.count(char) == count:
                 result += char
             elif s.count(char) < count:
