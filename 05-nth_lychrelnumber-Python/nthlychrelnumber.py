@@ -16,7 +16,7 @@ def isPalindrome(number):
 
 def isLychrelNumber(number):
 
-    for i in range(20):
+    for i in range(21):
         number += reverse(number)
         if isPalindrome(number):
             return False
