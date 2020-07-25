@@ -14,6 +14,7 @@ def isTidyNumber(number):
         digit = number % 10
         if lastDigit >= digit:
             number = number // 10
+            lastDigit = digit
         else:
             return False
     return True
