@@ -20,4 +20,6 @@ def permutationsHelper(string):
 
 def getallpermutations(x):
     # Your code goes here
+    if x == "":
+        return ""
     return permutationsHelper(x)
